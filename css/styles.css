@@ -1,0 +1,24 @@
+* {
+  box-sizing: border-box; }
+
+img {
+  width: 100%;
+  display: block; }
+
+body {
+  margin: 0; }
+
+#app-container {
+  padding-top: 90px; }
+  #app-container .nav-bar-top {
+    width: 30%;
+    margin: auto;
+    padding: 15px 0; }
+  #app-container .profPic {
+    border-radius: 100%;
+    width: 40%;
+    margin: 15px auto; }
+  #app-container .congressPeople li {
+    font-size: 12px; }
+
+/*# sourceMappingURL=styles.css.map */
