@@ -12,10 +12,12 @@ body {
 
 #app-container {
   padding-top: 90px; }
-  #app-container .nav-bar-top {
-    width: 30%;
-    margin: auto;
-    padding: 15px 0; }
+  #app-container .nav-bar-holder {
+    background: RGBA(189, 195, 199, 0.8); }
+    #app-container .nav-bar-holder .nav-bar-top {
+      width: 35%;
+      margin: auto;
+      padding: 15px 0; }
   #app-container .profPic {
     border-radius: 100%;
     width: 40%;

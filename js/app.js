@@ -1,5 +1,7 @@
 var moreButton = document.querySelector('.moreBut')
 var congressHolder = document.querySelector('.peopleInfoHolder')
+var dropButHolder = document.querySelector('.navButHolder')
+var dropBut = document.querySelector('.navBut')
 
 var addMoreNumb = 1
 var congressLink = 'https://congress.api.sunlightfoundation.com/legislators?page=' + addMoreNumb + '&per_page=10&apikey=ca7e5da974f1431cba49e128def60736'
@@ -21,6 +23,19 @@ $.getJSON(congressLink, function (data){
 var forEach = function(arr, cb){
    for(var i = 0 ; i < arr.length; i+=1){
       cb(arr[i])
+   }
+}
+
+var dropThis = function(){
+   if (dropButHolder.classList.contains('open')) {
+
+      dropButHolder.classList.remove('open')
+      dropBut.setAttribute("aria-expanded", false)
+
+   } else {
+
+      dropButHolder.classList.add('open')
+      dropBut.setAttribute("aria-expanded", true)
    }
 }
 
@@ -125,3 +140,4 @@ var createThis = function(curntMan){
 
 
 moreButton.addEventListener('click', addMore)
+dropBut.addEventListener('click', dropThis)

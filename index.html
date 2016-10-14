@@ -11,17 +11,20 @@
    <body>
       <div id="app-container">
          <div class="container">
-            <div class="navbar navbar-default navbar-fixed-top">
+            <div class="navbar navbar-default navbar-fixed-top nav-bar-holder">
                <div class="input-group nav-bar-top">
                   <input type="text" class="form-control" aria-label="...">
-                  <div class="input-group-btn">
-                     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Search <span class="caret"></span></button>
-                     <ul class="dropdown-menu dropdown-menu-right">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
+                  <div class="input-group-btn dropdown navButHolder">
+                     <button type="button" class="btn btn-default dropdown-toggle navBut" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="dropdownMenu1">Search by <span class="caret"></span></button>
+                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                        <li><a href="#">Email</a></li>
+                        <li><a href="#">Website</a></li>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Twitter</a></li>
                         <li role="separator" class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
+                        <li><a href="#">Name</a></li>
+                        <li><a href="#">Party</a></li>
+                        <li><a href="#">Position</a></li>
                      </ul>
                      <button class="btn btn-default moreBut" type="button">More..</button>
                   </div>

@@ -14,11 +14,17 @@ body {
 
    padding-top: 90px;
 
-   .nav-bar-top {
-      width: 30%;
-      margin: auto;
-      padding: 15px 0;
+   .nav-bar-holder{
+      background: RGBA(189, 195, 199, .8);
+
+      .nav-bar-top {
+         width: 35%;
+         margin: auto;
+         padding: 15px 0;
+
+      }
    }
+
 
    .profPic {
       border-radius: 100%;
