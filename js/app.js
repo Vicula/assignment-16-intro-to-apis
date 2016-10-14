@@ -27,15 +27,15 @@ var forEach = function(arr, cb){
 var findParty = function(partyStr){
    var partyColor = ''
    if (partyStr === 'R'){
-      partyColor = 'RGBA(207, 0, 15, 0.7)'
+      partyColor = 'RGBA(207, 0, 15, 0.9)'
 
       return partyColor
    } else if (partyStr === 'D'){
-      partyColor = 'RGBA(52, 152, 219, 0.7)'
+      partyColor = 'RGBA(52, 152, 219, 0.9)'
 
       return partyColor
    } else {
-      partyColor = 'RGBA(38, 166, 91, 0.7)'
+      partyColor = 'RGBA(38, 166, 91, 0.9)'
 
       return partyColor
    }
@@ -64,10 +64,10 @@ var createThis = function(curntMan){
    var fullLabel = curntMan.title + ' -- ' + curntMan.party + ' - ' + curntMan.state_name
    var emailAdr = curntMan.oc_email
    var webAdr = curntMan.website
-   var faceBook = curntMan.facebook_id
+   var faceBookId = curntMan.facebook_id
    var twitter = curntMan.twitter_id
    var termEnd = 'Term ends: ' + curntMan.term_end
-   var profImg = "http://graph.facebook.com/" + faceBook + "/picture?type=normal"
+   var profImg = function(fbId){ return "http://graph.facebook.com/" + fbId + "/picture?type=normal"}
    var defImg = "http://graph.facebook.com/" + 4 + "/picture?type=normal"
 
 
@@ -86,8 +86,12 @@ var createThis = function(curntMan){
       newDiv1.appendChild(newDiv2)
    var newImg = document.createElement('img')
       newImg.classList = 'profPic'
-      newImg.src = profImg
-      // newImg.onerror = function(){newImg.src = defImg}
+      newImg.src = profImg(faceBookId)
+      newImg.onerror = function(){
+         newImg.src = profImg('undefined')
+         console.log(fullName)
+         return
+      }
       newDiv2.appendChild(newImg)
    var newDiv3 = document.createElement('div')
       newDiv3.classList = 'caption'
@@ -107,7 +111,7 @@ var createThis = function(curntMan){
       newLi2.textContent = 'Website: ' + webAdr
       newListHolder.appendChild(newLi2)
    var newLi3 = document.createElement('li')
-      newLi3.textContent = 'Facebook: ' + faceBook
+      newLi3.textContent = 'Facebook: ' + faceBookId
       newListHolder.appendChild(newLi3)
    var newLi4 = document.createElement('li')
       newLi4.textContent = 'Twitter: ' + twitter
